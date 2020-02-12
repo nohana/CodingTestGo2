@@ -51,4 +51,20 @@ func TestPop(t *testing.T) {
 			return
 		}
 	})
+
+	t.Run("pop 3", func(t *testing.T) {
+		got := s.Pop()
+		wantVal := ""
+		if got != wantVal {
+			// TODO: more detail message
+			t.Error("error on 3 val")
+			return
+		}
+		want := Stack{}
+		if !reflect.DeepEqual(s, want) {
+			// TODO: more detail message
+			t.Error("error on 3")
+			return
+		}
+	})
 }

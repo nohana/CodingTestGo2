@@ -10,6 +10,9 @@ func (stack *Stack) Push(s string) {
 
 // Pop do pop from the top of stack and remove it.
 func (stack *Stack) Pop() string {
+	if len(*stack) == 0 {
+		return ""
+	}
 	ret := (*stack)[len(*stack)-1]
 	*stack = (*stack)[:len(*stack)-1]
 	return ret
